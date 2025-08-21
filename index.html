@@ -1,1 +1,18 @@
-<!-- Main page: list of clients -->
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRM - Клиенты</title>
+</head>
+<body>
+    <h1>Список клиентов</h1>
+
+    <a href="/add">Добавить клиента</a>
+
+    <ul>
+        {% for client in clients %}
+            <li>{{ client.name }} — {{ client.phone }} — {{ client.birthday }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html><!-- Main page: list of clients -->
