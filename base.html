@@ -1,1 +1,16 @@
-<!-- Base HTML template -->
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CRM{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/add">Добавить клиента</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html><!-- Base HTML template -->
