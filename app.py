@@ -23,3 +23,15 @@ def add_client():
 
 if __name__ == '__main__':
     app.run(debug=True)# Flask app will be here
+
+appointments = []
+
+@app.route('/appointments', methods=['GET', 'POST'])
+def appointments_page():
+    if request.method == 'POST':
+        date = request.form['date']
+        time = request.form['time']
+        name = request.form['name']
+        appointments.append({'date': date, 'time': time, 'name': name})
+        return redirect(url_for('appointments_page'))
+    return render_template('appointments.html', appointments=appointments)
