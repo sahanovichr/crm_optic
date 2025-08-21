@@ -1,0 +1,17 @@
+<!-- templates/add_client.html -->
+{% extends "base.html" %}
+
+{% block title %}Добавить клиента{% endblock %}
+
+{% block content %}
+    <h1>Добавить клиента</h1>
+    <form method="post">
+        <label>ФИО:</label><br>
+        <input type="text" name="name" required><br><br>
+        <label>Телефон:</label><br>
+        <input type="text" name="phone" required><br><br>
+        <label>День рождения:</label><br>
+        <input type="date" name="birthday"><br><br>
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}
