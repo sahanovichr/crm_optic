@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Запись к врачу</h1>
+
+<form method="POST">
+    <label>Дата: <input type="date" name="date" required></label><br>
+    <label>Время: <input type="time" name="time" required></label><br>
+    <label>ФИО пациента: <input type="text" name="name" required></label><br>
+    <button type="submit">Записать</button>
+</form>
+
+<h2>Список записей:</h2>
+{% if appointments %}
+<ul>
+    {% for a in appointments %}
+    <li>{{ a.date }} {{ a.time }} — {{ a.name }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Записей нет.</p>
+{% endif %}
+{% endblock %}
